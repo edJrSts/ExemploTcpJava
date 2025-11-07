@@ -28,6 +28,12 @@ public class TCPServer{
             String msg = new String(buf); // Mapeando vetor de bytes recebido para String
             
             System.out.println("  Mensagem recebida: "+ msg);
+            
+            String msgS = "Olá, DCOMP Client!!!";
+            byte[] bufS = msgS.getBytes(); // Obtendo a respresntação em bytes da mensagem
+
+            System.out.print("[ Enviando mensagem    ..............................  ");
+            os.write(bufS);
         }catch(Exception e){System.out.println(e);}    
         System.out.println("[ FIM ]");
     }
